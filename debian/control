@@ -1,0 +1,12 @@
+Source: ros-kinetic-gx-sound-msgs
+Section: misc
+Priority: extra
+Maintainer: GROOVE X Development Team <dev@groove-x.com>
+Build-Depends: debhelper (>= 9.0.0), ros-kinetic-actionlib-msgs, ros-kinetic-catkin, ros-kinetic-message-generation
+Homepage: https://github.com/groove-x/gx_sound
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-gx-sound-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-actionlib-msgs
+Description: The gx_sound_msgs package
