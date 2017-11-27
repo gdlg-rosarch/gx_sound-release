@@ -1,27 +1,37 @@
-# gx_sound [![wercker status](https://app.wercker.com/status/f7851ae3137c361ddcdc6750a617ad7a/s/master "wercker status")](https://app.wercker.com/project/byKey/f7851ae3137c361ddcdc6750a617ad7a)
+# gx_sound_player
 
-Sound player package for ROS.
+## Install dependencies
 
-## Installation
-
-```bash
-$ cd path/to/your/catkin_ws/src
-$ git clone https://github.com/groove-x/gx_sound.git
-$ cd ../
-$ catkin_make
-```
-
-### Install dependencies
-
-```bash
+```sh
 $ sudo apt install vorbis-tools
 ```
 
-## ROS API
+## Usage
 
-Please read [gx_sound_player/README.md](gx_sound_player/README.md).
+```sh
+$ roslaunch gx_sound_player sound_player.launch
+```
 
-## Supported Environment
 
-- Ubuntu 16.04
-- ROS Kinetic
+## Action API
+
+### Action Subscribed Topics
+
+- `~sound_request/goal` (gx_sound_msgs/SoundRequestActionGoal)
+    - A goal with audio file path and stamp for sound player to play.
+- `~sound_request/cancel` (actionlib_msgs/GoalID)
+    - A request to cancel a specific goal.
+
+### Action Published Topics
+
+- `~sound_request/feedback` (gx_sound_msgs/SoundRequestActionFeedback)
+    - No detailed information is contained in feedback.
+- `~sound_request/result` (gx_sound_msgs/SoundRequestActionResult)
+    - Status information of the goals (succeed / interrupted / file not found).
+- `~sound_request/status` (actionlib_msgs/GoalStatusArray)
+
+
+#### Parameters
+
+- `~device_name` (str)
+    - Name of audio device to play sound
