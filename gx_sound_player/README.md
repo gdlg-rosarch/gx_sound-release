@@ -34,4 +34,4 @@ $ roslaunch gx_sound_player sound_player.launch
 #### Parameters
 
 - `~device_name` (str)
-    - Name of audio device to play sound
+    - Name of audio device to play sound (ex: "default", "plughw:1,0")
